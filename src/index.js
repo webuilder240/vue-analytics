@@ -9,12 +9,17 @@
             ga('send', 'pageview', track_uri)
           }
         },
-        eventTrack(eventName,options = {}) {
+        eventTrack(options = {}) {
           if (typeof window.ga !== "undefined") {
             if (options !== {}) {
-              ga('send', 'event', options.category, options.action, options.label, options.value)
-            } else {
-              ga('send', 'event', 'Event', '', '', '')
+              // ga('send', 'event', options.category, options.action, options.label,)
+              ga('send', {
+                hitType: 'event',
+                eventCategory: options.category,
+                eventAction: options.action,
+                eventLabel: options.label,
+                eventValue: options.value
+              });
             }
           }
         }

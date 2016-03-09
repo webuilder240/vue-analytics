@@ -66,14 +66,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	          ga('send', 'pageview', track_uri);
 	        }
 	      },
-	      eventTrack: function eventTrack(eventName) {
-	        var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	      eventTrack: function eventTrack() {
+	        var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 	
 	        if (typeof window.ga !== "undefined") {
 	          if (options !== {}) {
-	            ga('send', 'event', options.category, options.action, options.label, options.value);
-	          } else {
-	            ga('send', 'event', 'Event', '', '', '');
+	            ga('send', {
+	              hitType: 'event',
+	              eventCategory: options.category,
+	              eventAction: options.action,
+	              eventLabel: options.label,
+	              eventValue: options.value
+	            });
 	          }
 	        }
 	      }
