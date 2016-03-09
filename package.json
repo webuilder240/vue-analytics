@@ -2,7 +2,7 @@
   "name": "vue-analytics",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
+  "main": "./dist/vue-analytics.js",
   "scripts": {
     "dev": "webpack --watch",
     "build": "webpack --config webpack.config.js",

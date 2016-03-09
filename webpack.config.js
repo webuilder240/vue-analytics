@@ -2,9 +2,9 @@ var webpack = require('webpack')
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: './build',
-    publicPath: '/build',
-    filename: 'build.js'
+    filename: './dist/vue-analytics.js',
+    library: 'vue-analytics',
+    libraryTarget: 'umd'
   },
   devtool: 'source-map',
   module: {
