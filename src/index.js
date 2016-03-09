@@ -9,16 +9,16 @@
             ga('send', 'pageview', track_uri)
           }
         },
-        eventTrack(options = {}) {
+        eventTrack(track_options = {}) {
           if (typeof window.ga !== "undefined") {
-            if (options !== {}) {
+            if (track_options !== {}) {
               // ga('send', 'event', options.category, options.action, options.label,)
               ga('send', {
                 hitType: 'event',
-                eventCategory: options.category,
-                eventAction: options.action,
-                eventLabel: options.label,
-                eventValue: options.value
+                eventCategory: track_options.category,
+                eventAction: track_options.action,
+                eventLabel: track_options.label,
+                eventValue: track_options.value
               });
             }
           }

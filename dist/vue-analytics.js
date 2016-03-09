@@ -67,16 +67,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      },
 	      eventTrack: function eventTrack() {
-	        var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	        var track_options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 	
 	        if (typeof window.ga !== "undefined") {
-	          if (options !== {}) {
+	          if (track_options !== {}) {
 	            ga('send', {
 	              hitType: 'event',
-	              eventCategory: options.category,
-	              eventAction: options.action,
-	              eventLabel: options.label,
-	              eventValue: options.value
+	              eventCategory: track_options.category,
+	              eventAction: track_options.action,
+	              eventLabel: track_options.label,
+	              eventValue: track_options.value
 	            });
 	          }
 	        }
