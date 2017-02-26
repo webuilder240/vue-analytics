@@ -58,16 +58,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	(function () {
 	  function install(Vue) {
-	    var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 	
 	    Vue.prototype.$analytics = {
 	      pageTrack: function pageTrack(track_uri) {
 	        if (typeof window.ga !== "undefined") {
+	          ga('set', 'title', document.title);
 	          ga('send', 'pageview', track_uri);
 	        }
 	      },
 	      eventTrack: function eventTrack() {
-	        var track_options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	        var track_options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 	
 	        if (typeof window.ga !== "undefined") {
 	          if (track_options !== {}) {

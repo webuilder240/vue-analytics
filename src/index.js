@@ -6,6 +6,7 @@
       Vue.prototype.$analytics = {
         pageTrack(track_uri) {
           if (typeof window.ga !== "undefined") {
+			ga('set', 'title', document.title)
             ga('send', 'pageview', track_uri)
           }
         },
